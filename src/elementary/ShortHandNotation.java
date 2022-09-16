@@ -4,7 +4,7 @@
 // /=
 // %=
 
-package conditional_constructs;
+package elementary;
 
 public class ShortHandNotation {
 

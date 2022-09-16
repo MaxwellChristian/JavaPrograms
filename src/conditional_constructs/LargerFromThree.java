@@ -1,3 +1,7 @@
+// Write a program which takes input of three numbers and
+// display whether they all are same or not
+// and when not same, displays which number is the largest
+
 package conditional_constructs;
 
 import java.util.Scanner;

@@ -1,5 +1,7 @@
 // Write a program to check whether an input number is divisible by 2 or 3 but not both
 
+// Signifies the use of ^ (XOR) operator
+
 package conditional_constructs;
 
 import java.util.Scanner;
