@@ -27,6 +27,37 @@ public class StringContainsDemo {
             System.out.println(text2 + " is NOT in " + text1);
         }
 
+        // check if a character exists in a text
+
+        // indexOf(ch) : return the index from the text where ch occurs for the FIRST time.
+        // if ch does not exist, then it returns -1
+        if( text1.indexOf('e') != -1 ){
+            System.out.println("e exists in " + text1);
+        }
+        else {
+            System.out.println("e does not exist in " + text1);
+        }
+
+        // lastIndexOf(ch) : return the index from the text where ch occurs for the LAST time.
+        // if ch does not exist, then it returns -1
+        if( text1.lastIndexOf('e') != -1 ){
+            System.out.println("e exists in " + text1);
+        }
+        else {
+            System.out.println("e does not exist in " + text1);
+        }
+
+        // display the position where 'E' is found in the string
+        int foundAtPosition = text1.indexOf('E');
+        if( foundAtPosition != -1 ){
+            System.out.println("Found at position : " + foundAtPosition);
+        }
+        else {
+            System.out.println("Not found");
+        }
+
+
+
     }
 
 }
