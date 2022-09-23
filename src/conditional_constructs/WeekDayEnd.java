@@ -1,4 +1,3 @@
-
 // Write a program which takes day number and displays whether that day is a WEEKDAY or WEEKEND
 
 package conditional_constructs;

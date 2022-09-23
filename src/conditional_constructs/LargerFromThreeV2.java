@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LargerFromThreeV2 {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         int num1;
         int num2;
@@ -23,19 +23,16 @@ public class LargerFromThreeV2 {
 
         // && : logical AND operator
         // Returns TRUE only when both conditions are TRUE
-        if( num1 == num2 && num1 == num3 ){
+        if (num1 == num2 && num1 == num3) {
             System.out.println("All numbers are same");
-        }
-        else {
-            if( num1 > num2 && num1 > num3 ){
+        } else {
+            if (num1 > num2 && num1 > num3) {
                 System.out.println(num1 + " is largest");
-            }
-            else {
-                if( num2 > num1 && num2 > num3 ){
+            } else {
+                if (num2 > num1 && num2 > num3) {
                     System.out.println(num2 + " is largest");
-                }
-                else {
-                    if( num3 > num1 && num3 > num2 ){
+                } else {
+                    if (num3 > num1 && num3 > num2) {
                         System.out.println(num3 + " is largest");
                     }
                 }

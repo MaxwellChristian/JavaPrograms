@@ -6,24 +6,23 @@ package conditional_constructs;
 
 public class TernaryOperator {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         int x = 5;
         int y = 7;
-        int z ;
+        int z;
 
         // store the larger number in Z
-        if( x > y ){
+        if (x > y) {
             z = x;
-        }
-        else {
+        } else {
             z = y;
         }
 
         // same can be achieved using ternary operator
         // ?:
-            // -> after ? follows the TRUE part
-            // -> and after : follows the FALSE part
+        // -> after ? follows the TRUE part
+        // -> and after : follows the FALSE part
 
         // should be used when assigning some value to common variable based on conditions
 
@@ -35,18 +34,16 @@ public class TernaryOperator {
         z = 7;
         int largest;
 
-        largest = (x > y) ? ( (x>z) ? x : z ) : ( (y>z)? y : z );
+        largest = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
         System.out.println("Largest : " + largest);
 
-        if( x > y && x > z ){
+        if (x > y && x > z) {
             largest = x;
-        }
-        else {
-            if( y >x && y > z ){
+        } else {
+            if (y > x && y > z) {
                 largest = y;
-            }
-            else {
-                if( z > x && z > y ){
+            } else {
+                if (z > x && z > y) {
                     largest = z;
                 }
             }

@@ -1,9 +1,7 @@
 package string_demos;
 
-import java.util.Locale;
-
 public class StringMethods {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         String text1 = "Hello Everybody !!";
         String text2 = "Hello World !!";
@@ -16,16 +14,16 @@ public class StringMethods {
         System.out.println(text1 + " has length " + lengthOfString);
 
         // check if a given string STARTS with a particular string sequence
-        if( text1.startsWith("He") ){
+        if (text1.startsWith("He")) {
             System.out.println(text1 + " : starts with (He)");
-        }else {
+        } else {
             System.out.println(text1 + " : does not start with (He)");
         }
 
         // check if a given string ENDS with a particular string sequence
-        if( text1.endsWith("!!") ){
+        if (text1.endsWith("!!")) {
             System.out.println(text1 + " : ends with (!!)");
-        }else {
+        } else {
             System.out.println(text1 + " : does not end with (!!)");
         }
 
@@ -46,8 +44,8 @@ public class StringMethods {
         // TRIM returns a new string with after removing blank spaces at the BEGINNING and ENDING of the string
         String testText = "   !! Welcome !!   "; // the text consists of WHITE spaces at the BEGINNING and ENDING
         String trimmedText = testText.trim();
-        System.out.println( testText + " : Text with white spaces [before and after the text]");
-        System.out.println( trimmedText + " : Text after trim.");
+        System.out.println(testText + " : Text with white spaces [before and after the text]");
+        System.out.println(trimmedText + " : Text after trim.");
 
     }
 }

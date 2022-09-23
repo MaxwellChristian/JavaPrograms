@@ -11,7 +11,7 @@ package mathlibrary;
 
 public class ExponentMethods {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         System.out.println("Math.E: " + Math.E);
         System.out.println("Math.PI: " + Math.PI);

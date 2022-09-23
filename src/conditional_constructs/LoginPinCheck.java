@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 /**
  * @author christianm
- *
  */
 public class LoginPinCheck {
 

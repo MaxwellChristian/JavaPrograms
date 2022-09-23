@@ -1,17 +1,17 @@
 /*
-* This program demonstrates the use of rounding methods from Math library of Java i.e. Math class
-* Methods explored
-*   ceil
-*   floor
-*   round
-*   rint
-* */
+ * This program demonstrates the use of rounding methods from Math library of Java i.e. Math class
+ * Methods explored
+ *   ceil
+ *   floor
+ *   round
+ *   rint
+ * */
 
 package mathlibrary;
 
 public class RoundingMethods {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         // ceil(x) functions rounds UP to the nearest int and returns it as a double value
         System.out.println("Math.ceil(2.1): " + Math.ceil(2.1));
@@ -20,7 +20,7 @@ public class RoundingMethods {
         System.out.println("Math.ceil(-2.0): " + Math.ceil(-2.0));
         System.out.println("Math.ceil(-2.1): " + Math.ceil(-2.1));
         System.out.println("Math.ceil(-2.8): " + Math.ceil(-2.8));
-        
+
         System.out.println();
 
         // floor(x) functions rounds DOWN to the nearest int and returns it as a double value

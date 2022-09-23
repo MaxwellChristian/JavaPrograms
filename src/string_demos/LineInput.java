@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class LineInput {
 
-    public static void main(String [] args){
+    public static void main(String[] args) {
 
         int pos;
 
@@ -22,34 +22,32 @@ public class LineInput {
 
         // search for first space
         pos = text.indexOf(' ');
-        if( pos != -1 ){
+        if (pos != -1) {
             System.out.println("First space is at : " + pos);
 
             // search for the second space
-            pos = text.indexOf(' ', pos+1);
-            if( pos != -1){
+            pos = text.indexOf(' ', pos + 1);
+            if (pos != -1) {
                 System.out.println("Second space is at : " + pos);
             }
 
-        }
-        else {
+        } else {
             System.out.println("Np space found in text");
         }
 
         // search for the last two spaces
         // search for LAST space
         pos = text.lastIndexOf(' ');
-        if( pos != -1 ){
+        if (pos != -1) {
             System.out.println("LAST space is at : " + pos);
 
             // search for the second LAST space
-            pos = text.lastIndexOf(' ', pos-1);
-            if( pos != -1){
+            pos = text.lastIndexOf(' ', pos - 1);
+            if (pos != -1) {
                 System.out.println("Second LAST space is at : " + pos);
             }
 
-        }
-        else {
+        } else {
             System.out.println("Np space found in text");
         }
 

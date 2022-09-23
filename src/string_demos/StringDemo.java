@@ -1,7 +1,7 @@
 package string_demos;
 
 public class StringDemo {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         String text1 = "Hello Everybody !!";
         String text2 = "Hello World !!";

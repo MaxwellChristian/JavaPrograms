@@ -8,7 +8,7 @@ package elementary;
 
 public class ShortHandNotation {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         int num1;
         int num2;
@@ -48,10 +48,10 @@ public class ShortHandNotation {
         // num1 = num1 * (num2 * ans)
         // num1 *= (num2 * ans)
 
-        num1 = num1 / num2 - ans - num1 ;
+        num1 = num1 / num2 - ans - num1;
         // num1 /= (num2 - ans - num1)
 
-        ans = ans + num1 * num2 % ans + num2 ;
+        ans = ans + num1 * num2 % ans + num2;
         // ans += (num1 * num2 % ans + num2)
 
         num1 = 5;
@@ -59,7 +59,7 @@ public class ShortHandNotation {
         ans = 0;
 
 //        ans = ans + num1 ;
-        ans += num1 ;
+        ans += num1;
         System.out.println(ans);
 
 //        ans = ans + (num1 / num2 - ans - num1) ;
@@ -70,8 +70,8 @@ public class ShortHandNotation {
         ans += (num1 * num2 % ans + num2);
         System.out.println(ans);
 
-        ans = ans + ((num1 + num2) * num1 - ans) / num1 ;
-        ans += ((num1 + num2) * num1 - ans) / num1 ;
+        ans = ans + ((num1 + num2) * num1 - ans) / num1;
+        ans += ((num1 + num2) * num1 - ans) / num1;
     }
 
 }

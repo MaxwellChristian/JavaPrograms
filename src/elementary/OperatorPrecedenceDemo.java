@@ -22,7 +22,7 @@ package elementary;
 
 public class OperatorPrecedenceDemo {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         char x = 'A';
         double d = 5.8;
@@ -36,16 +36,16 @@ public class OperatorPrecedenceDemo {
 
         // 3 + 4 * 4 > 5 * (4 + 3) – 1
 
-            // 3 + 4 * 4 -> 3 + 16 -> 19
-            // 5 * (4 + 3) – 1 -> 5 * 7 - 1 -> 34
-            // 19 > 24 -> false
+        // 3 + 4 * 4 -> 3 + 16 -> 19
+        // 5 * (4 + 3) – 1 -> 5 * 7 - 1 -> 34
+        // 19 > 24 -> false
 
         // 4 – 3 > 5
-            // 1 > 5
-            // false
+        // 1 > 5
+        // false
 
         // false && false
-            // false
+        // false
 
     }
 

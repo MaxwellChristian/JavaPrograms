@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class DivisibleBy2Or3 {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         int number;
 
@@ -17,11 +17,10 @@ public class DivisibleBy2Or3 {
         System.out.print("Enter a number: ");
         number = input.nextInt();
 
-        if ( number%2==0 ^ number%3==0 ){
-            System.out.println( number + " is divisible by 2 or 3");
-        }
-        else {
-            System.out.println( number + " is not divisible by 2 OR 3");
+        if (number % 2 == 0 ^ number % 3 == 0) {
+            System.out.println(number + " is divisible by 2 or 3");
+        } else {
+            System.out.println(number + " is not divisible by 2 OR 3");
         }
 
     }

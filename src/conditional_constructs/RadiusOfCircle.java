@@ -1,4 +1,3 @@
-
 // Develop a program which can compute the radius of a circle
 // take into consideration that radius should not be negative
 
@@ -8,12 +7,12 @@
 // - use of variable
 // - use of conditional construct [ if - else ]
 // - use of relational operators
-    // > : greater than
-    // < : less than
-    // == : comparison [equality check]
-    // != : not equals
-    // >= : greater than or equal to
-    // <= : less than or equal to
+// > : greater than
+// < : less than
+// == : comparison [equality check]
+// != : not equals
+// >= : greater than or equal to
+// <= : less than or equal to
 
 package conditional_constructs;
 
@@ -21,7 +20,7 @@ import java.util.Scanner;
 
 public class RadiusOfCircle {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
 //        declaration section
         double radius;
@@ -37,13 +36,12 @@ public class RadiusOfCircle {
 //        processing section
 
 //        check whether radius is positive or not
-        if( radius >= 0 ){
+        if (radius >= 0) {
             area = pi * radius * radius;
 
 //        output section
             System.out.println("Area of circle with radius " + radius + " is " + area);
-        }
-        else {
+        } else {
             System.out.println("Please provide radius more than ZERO");
         }
 

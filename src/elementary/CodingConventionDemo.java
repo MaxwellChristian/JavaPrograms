@@ -1,13 +1,13 @@
 
 /*
-* The purpose of this program is to provide a small demo of coding convention
-* */
+ * The purpose of this program is to provide a small demo of coding convention
+ * */
 
 package elementary;
 
 public class CodingConventionDemo {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         // constants [a value which once assigned cannot be modified]
 //                [to declare a constant, prefix the declaration by the keyword final]
@@ -28,8 +28,7 @@ public class CodingConventionDemo {
 
         double area;
 //        double areaofcirlce ; // not as per convention
-        double areaOfCircle ; // proper convention
-
+        double areaOfCircle; // proper convention
 
 
         // classes

@@ -1,4 +1,3 @@
-
 // Input two numbers from user and display the larger number
 
 package conditional_constructs;

@@ -2,7 +2,7 @@ package elementary;
 
 public class DatatypeOperations {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         boolean bo = false;
 
@@ -19,7 +19,7 @@ public class DatatypeOperations {
 //        c = c + b;
         System.out.println("c + b : " + (c + b));
 
-         // l = (b + i + l + d); // Syntax error. Casting required to long
+        // l = (b + i + l + d); // Syntax error. Casting required to long
         // i = b + i + l + d; // Syntax error. Casting required to int
         // f = s + i + f + d; // Syntax error. Casting required to float
 

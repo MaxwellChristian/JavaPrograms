@@ -1,15 +1,12 @@
-
 // write a program to store 3 different characters
 // do not take input from user. Use pre-stored values from program.
 // Check the type of each character stored.
 
 package character_demo;
 
-import java.util.Scanner;
-
 public class CharacterClassDemo {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         char ch;
 
@@ -26,7 +23,7 @@ public class CharacterClassDemo {
 
         ch = 97;
         System.out.println("ch: " + ch);
-        System.out.println("ch: " + (int)ch);
+        System.out.println("ch: " + (int) ch);
 
         // error: as 9 and 7 are two characters
         //ch = '97';
@@ -36,42 +33,38 @@ public class CharacterClassDemo {
         //ch = 'XY';
         //System.out.println("ch: " + ch);
 
-        ch = (char)67.25;
+        ch = (char) 67.25;
         System.out.println("ch: " + ch);
 
         ch = 90;
-        if( ch >= 65 && ch <= 90 ){
-            System.out.println( ch + ": upper case character");
+        if (ch >= 65 && ch <= 90) {
+            System.out.println(ch + ": upper case character");
         }
 
         ch = 'j';
-        if( ch >= 'a' && ch <= 'z' ){
-            System.out.println( ch + ": lower case character : " + (int)ch);
+        if (ch >= 'a' && ch <= 'z') {
+            System.out.println(ch + ": lower case character : " + (int) ch);
         }
 
 
         ch = 'A';
-        if( Character.isUpperCase(ch) ){
+        if (Character.isUpperCase(ch)) {
             System.out.println(ch + " is upper case");
         }
 
         ch = '5';
-        if( Character.isDigit(ch) ){
+        if (Character.isDigit(ch)) {
             System.out.println(ch + " is digit");
-        }
-        else {
+        } else {
             System.out.println(ch + " is not a digit");
         }
 
         ch = '$';
-        if( Character.isLetter(ch) ){
+        if (Character.isLetter(ch)) {
             System.out.println(ch + " is letter");
-        }
-        else {
+        } else {
             System.out.println(ch + " is not a letter");
         }
-
-
 
 
     }

@@ -1,4 +1,3 @@
-
 // Write a program which checks whether a given/input number is divisible by 4 or 5 [but not both]
 
 package conditional_constructs;
