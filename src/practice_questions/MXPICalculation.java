@@ -1,0 +1,61 @@
+
+/*
+*
+* Develop a JAVA program which can compute the value of PI using the following formula:
+* PI = 4 – 4/3 + 4/5 – 4/7 + 4/9 – 4/11 …..
+*
+* */
+
+package practice_questions;
+
+public class MXPICalculation {
+
+    public static void main(String[] args){
+
+        // declaration
+        int TOTAL_ITERATIONS = 100000;
+        int counter;
+
+        boolean operationToUse = true ;
+        double divisor = 1.0;
+        double pi = 0;
+
+        // input
+        // No input required as per problem statement
+
+        // processing
+
+        // initialise the counter
+        counter = 1 ;
+
+        // iterate while the counter has not reached the desired value
+        while ( counter <= TOTAL_ITERATIONS ){
+
+            // check the iteration number to decide for addition/subtraction operation
+            if( operationToUse ){
+                pi += 4 / divisor;
+            }
+            else {
+                pi -= 4 / divisor;
+            }
+
+            // inverse the last used operation for next computation
+            // [i.e. addition to subtraction and vice versa]
+            operationToUse = !operationToUse;
+
+            // increment the divisor by 2 for next computation
+            divisor += 2;
+
+            // change the counter
+            // [i.e. increase or decrease the counter value]
+            counter++;
+
+            // System.out.println("Pi [25 iterations]: " + pi);
+        }
+
+        // output
+        System.out.printf("%s [%d] %s : %.16f\n", "Pi", TOTAL_ITERATIONS," iterations", pi);
+
+    }
+
+}
