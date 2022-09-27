@@ -1,7 +1,7 @@
 
 // Display a series of numbers from 1 to 100 in the same line
 
-package looping_constructs;
+package looping_constructs.using_while;
 
 public class DisplayNumberSeries1 {
 

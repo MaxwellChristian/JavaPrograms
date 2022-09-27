@@ -1,4 +1,4 @@
-package looping_constructs;
+package looping_constructs.using_while;
 
 // Write a program to print # 51 times
 

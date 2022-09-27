@@ -1,7 +1,7 @@
 
 // Write a JAVA program to identify the type of each alphabet from a given string
 
-package looping_constructs;
+package looping_constructs.using_while;
 
 import java.util.DoubleSummaryStatistics;
 import java.util.Scanner;

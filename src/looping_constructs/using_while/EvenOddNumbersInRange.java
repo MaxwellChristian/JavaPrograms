@@ -15,7 +15,7 @@
 // 11 : odd
 // 12 : even
 
-package looping_constructs;
+package looping_constructs.using_while;
 
 import java.util.Scanner;
 

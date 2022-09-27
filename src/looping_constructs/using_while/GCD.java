@@ -1,7 +1,7 @@
 
 // Write a program to determine the greatest common divisor of two input numbers
 
-package looping_constructs;
+package looping_constructs.using_while;
 
 import java.util.Scanner;
 

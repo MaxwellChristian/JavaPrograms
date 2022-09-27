@@ -10,7 +10,7 @@
 // RADAR : is a palindrome
 // RED : is not a palindrome
 
-package looping_constructs;
+package looping_constructs.using_while;
 
 public class PalindromeCheck {
 

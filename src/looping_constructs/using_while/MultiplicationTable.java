@@ -16,7 +16,7 @@
 // 5 x 6 = 30
 // 5 x 7 = 35
 
-package looping_constructs;
+package looping_constructs.using_while;
 
 import java.util.Scanner;
 

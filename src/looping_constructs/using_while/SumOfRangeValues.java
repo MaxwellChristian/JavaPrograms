@@ -6,7 +6,7 @@
 //                  [start from initial number and repeat till last number]
 // output : the computed total value
 
-package looping_constructs;
+package looping_constructs.using_while;
 
 import java.util.Scanner;
 

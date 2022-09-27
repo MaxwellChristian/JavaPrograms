@@ -19,7 +19,7 @@
 // v : Lower case
 // a : Lower case
 
-package looping_constructs;
+package looping_constructs.using_while;
 
 import java.util.Scanner;
 

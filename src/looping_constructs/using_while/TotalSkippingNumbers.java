@@ -4,11 +4,11 @@
 
 // i.e. add all values between N1 and N2 skipping multiples of 5
 
-package looping_constructs;
+package looping_constructs.using_while;
 
 import java.util.Scanner;
 
-public class TotalSkippingNumbers2 {
+public class TotalSkippingNumbers {
 
     public static void main(String[] args) {
 
@@ -28,31 +28,24 @@ public class TotalSkippingNumbers2 {
         // processing
 
         // start point
-        int counter = num1 - 1;
+        int counter = num1;
 
         // check point
-        while (counter < num2) {
-
-            // change part
-            counter++;
+        while (counter <= num2) {
 
             // add to total skipping multiple of 5
-            if (counter % 5 == 0) {
-                continue;
+            if( counter%5 != 0 ){
 
-                // continue will skip all the remaining statement in the loop
-                // and will go back to the check point
-                // [as opposite to break, continue will not jump out of the loop]
+                System.out.printf("%2d + %2d = ", total, counter);
+
+                total += counter;
+
+                // output
+                System.out.printf("%3d\n", total);
             }
 
-            System.out.printf("%2d + %2d = ", total, counter);
-
-            total += counter;
-
-            // output
-            System.out.printf("%3d\n", total);
-
-
+            // change point
+            counter++;
         }
 
     }

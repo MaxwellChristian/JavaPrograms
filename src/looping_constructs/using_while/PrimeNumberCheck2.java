@@ -14,11 +14,11 @@
 // hint : if number has factors [other than 1 and number itself],
 // then number is not PRIME
 
-package looping_constructs;
+package looping_constructs.using_while;
 
 import java.util.Scanner;
 
-public class PrimeNumberCheck {
+public class PrimeNumberCheck2 {
 
     public static void main(String[] args){
 
@@ -55,6 +55,15 @@ public class PrimeNumberCheck {
 
                 // mark that a factor is found
                 foundAFactor = true;
+
+                // if a factor is found, there is no need to still be in loop
+                // so, we can stop the loop in between [i.e. we can break the loop]
+                break;
+
+                // when ever a break statement is encountered in a loop
+                // it simply terminates the loop and jumps out of the loop
+                // i.e., it will jump to statements after the loop
+                // and no other statements in the loop will execute
             }
 
             // change point
@@ -66,7 +75,6 @@ public class PrimeNumberCheck {
         if( ! foundAFactor ){
             System.out.println(numberToCheck + " is a PRIME number");
         }
-
 
     }
 
