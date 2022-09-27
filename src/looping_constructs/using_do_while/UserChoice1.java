@@ -6,7 +6,7 @@
 //      if user replies 'Y' then program works
 //      if user replies 'N' then program terminates
 
-package looping_constructs;
+package looping_constructs.using_do_while;
 
 import java.util.Scanner;
 
