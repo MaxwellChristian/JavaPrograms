@@ -9,8 +9,6 @@
 *
 * */
 
-package practice_questions;
-
 public class ChoiceDemo {
 
     public static void main(String []args){
