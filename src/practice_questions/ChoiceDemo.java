@@ -1,4 +1,4 @@
-
+package practice_questions;
 /*
 *Write a JAVA program which shows a menu option to the user and performs the actions according to the choice of the user
 1. convert an int value to binary and display the same
