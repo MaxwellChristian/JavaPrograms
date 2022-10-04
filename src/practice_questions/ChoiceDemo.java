@@ -7,6 +7,8 @@ package practice_questions;
 4. convert a hex string to binary [in octets i.e. space after each 8 bits]
 5. Enter a 10 digit SIN number and print in the provided format [e.g 123123456 : 123-12-3456]
 *
+* Do not exit the program till the user enters [0]
+*
 * */
 
 public class ChoiceDemo {
