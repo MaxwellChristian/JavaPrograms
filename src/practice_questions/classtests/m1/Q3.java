@@ -8,7 +8,7 @@ The program also displays the smallest number with a single digit.
 *
 * */
 
-package practice_questions.mocktests.m1;
+package practice_questions.classtests.m1;
 
 import java.util.Scanner;
 

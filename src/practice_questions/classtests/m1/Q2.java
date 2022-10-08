@@ -7,7 +7,7 @@ For example, if the user enters “a b c d e f g h i j k l m n x”, the program
 *
 */
 
-package practice_questions.mocktests.m1;
+package practice_questions.classtests.m1;
 
 import java.util.Scanner;
 

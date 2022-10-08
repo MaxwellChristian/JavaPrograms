@@ -13,7 +13,7 @@ The mapping relationship between numbers and letters is defined as
 *
 * */
 
-package practice_questions.mocktests.m1;
+package practice_questions.classtests.m1;
 
 import java.util.Scanner;
 

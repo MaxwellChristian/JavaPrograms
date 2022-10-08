@@ -9,7 +9,7 @@
 * the same process continues till possible
 * */
 
-package practice_questions.mocktests.m1;
+package practice_questions.classtests.m1;
 
 import java.util.Scanner;
 
