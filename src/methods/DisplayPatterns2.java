@@ -1,9 +1,8 @@
 package methods;
 
 import java.util.Scanner;
-import java.util.stream.StreamSupport;
 
-public class DisplayPatterns {
+public class DisplayPatterns2 {
 
     public static void main(String []args){
 
@@ -31,9 +30,11 @@ public class DisplayPatterns {
                 case 1:
 
                     // line
-                    for(col = 1; col <= 10  ; col++ ){
-                        System.out.print("#");
-                    }
+
+                    System.out.print("enter length of the line: ");
+                    int len = input.nextInt();
+                    printLine(len);
+
                     System.out.println();
 
                     break;
@@ -42,7 +43,9 @@ public class DisplayPatterns {
                     // block
 
                     // call the method
-                    printBlock();
+                    System.out.print("Enter the length of the line: ");
+                    len = input.nextInt();
+                    printBlock(len);
 
                     break;
                 case 3:
@@ -80,6 +83,25 @@ public class DisplayPatterns {
 
     }
 
+    private static void printLine(int desiredLength) {
+
+        int c ;
+        for(c=1 ; c<=desiredLength ; c++){
+            System.out.print("#");
+        }
+
+    }
+
+    private static void printBlock(int times) {
+        int row;
+
+        for( row = 1 ; row <= times ; row++ ){
+                printLine(times);
+                System.out.println();
+        }
+
+    }
+
     private static void printCentreTriangle() {
         int row;
         int col ;
@@ -111,19 +133,6 @@ public class DisplayPatterns {
         }
     }
 
-    private static void printBlock() {
-
-        int row;
-        int col;
-
-        for( row = 1 ; row <= 10 ; row++ ){
-            for(col = 1; col <= 10  ; col++ ){
-                System.out.print("#");
-            }
-            System.out.println();
-        }
-    }
-
     // method definition
     // 1: return type -> void
     // 2: method name -> printLeftTriangle
@@ -134,9 +143,7 @@ public class DisplayPatterns {
         int col ;
 
         for( row = 1 ; row <= 10 ; row++ ){
-            for(col = 1; col <= row  ; col++ ){
-                System.out.print("#");
-            }
+            printLine(row);
             System.out.println();
         }
 
