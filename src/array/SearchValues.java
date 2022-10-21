@@ -18,6 +18,7 @@
 package array;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class SearchValues {
@@ -38,11 +39,13 @@ public class SearchValues {
         // the size of the array must be as specified  by the user
         values = new int[noOfValues];
 
-        int index ;
-        for(index = 0 ; index < noOfValues ; index++){
-            System.out.printf("Enter value[%2d]: ", index);
-            values[index] = input.nextInt();
-        }
+//        int index ;
+//        for(index = 0 ; index < noOfValues ; index++){
+//            System.out.printf("Enter value[%2d]: ", index);
+//            values[index] = input.nextInt();
+//        }
+
+        values = getArrayWithRandomValues(noOfValues, 100);
 
         System.out.print("Value to search: ");
         searchValue = input.nextInt();
@@ -54,6 +57,7 @@ public class SearchValues {
 
         // option 1 : using a custom print method
         printArray(values, ' ');
+        System.out.println();
 
         // option 2 : using in-built Arrays.toString()
         System.out.println(Arrays.toString(values));
@@ -62,10 +66,21 @@ public class SearchValues {
 
     }
 
+    private static int[] getArrayWithRandomValues(int noOfValues, int maxValue) {
+
+        int []values = new int[noOfValues];
+
+        for(int index = 0 ; index < values.length ; index++){
+            values[index] = new Random().nextInt() %  maxValue;
+        }
+
+        return values;
+    }
+
     private static void printArray(int[] values, char separator) {
 
         for(int index = 0 ; index < values.length ; index++){
-            System.out.print(values[index] + separator);
+            System.out.print(values[index] + "" + separator);
         }
 
 //        for (int value : values) {
