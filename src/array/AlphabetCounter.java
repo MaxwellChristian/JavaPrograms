@@ -104,23 +104,18 @@ public class AlphabetCounter {
         int index;
         for (index = 0; index < text.length(); index++) {
 
-            char ch = text.charAt(index);
+            char ch = text.toLowerCase().charAt(index);
 
-            if (ch >= 'A' && ch <= 'Z') {
-                count[ch - 'A']++;
-                // ch : D -> 'D'-'A' -> 68-65 -> 3 the index for 'D'
-            } else {
-                if (ch >= 'a' && ch <= 'z') {
-                    count[ch - 'a']++;
-                    // ch : a -> 'a'-'a' -> 65-65 -> 0 the index for 'a'
-                }
+            if (ch >= 'a' && ch <= 'z') {
+                count[ch - 'a']++;
+                // ch : a -> 'a'-'a' -> 65-65 -> 0 the index for 'a'
             }
 
         }
 
         // print all the counters for each character from the array
-        for (index = 0; index < count.length ; index++ ) {
-            System.out.printf("%c: %2d\n", (index+'A'), count[index]);
+        for (index = 0; index < count.length; index++) {
+            System.out.printf("%c: %2d\n", (index + 'A'), count[index]);
         }
 
     }
