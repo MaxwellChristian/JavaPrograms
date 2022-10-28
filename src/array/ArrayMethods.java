@@ -10,6 +10,9 @@ public class ArrayMethods {
     public static final int ASCENDING = 0;
     private static final int DESCENDING = 1;
 
+    public static final int ROW_SORT = 0;
+    private static final int COL_SORT = 1;
+
     public static double[] getRandomDoubleValues(int noOfValues, int maxValue) {
 
         double[] values = new double[noOfValues];
@@ -99,6 +102,50 @@ public class ArrayMethods {
 
     }
 
+    public static void sort(int algorithm, int sortOrder, int rowOrCol, int[][] matrix){
+
+        switch (rowOrCol){
+            case ROW_SORT -> {
+                switch (algorithm){
+                    case BUBBLE_SORT -> {
+                        for(int row = 0 ; row < matrix.length ; row++){
+                            bubbleSort(sortOrder, matrix[row]);
+                        }
+                    }
+                }
+            }
+            case COL_SORT ->
+            {
+                // iterate for each COL from the matrix
+                    // assuming that each row of the matrix has same number of cols i.e. square matrix
+                for(int col = 0 ; col < matrix[0].length ; col++){
+
+                    // for each col, repeat the below-mentioned steps
+
+                    // transfer the values from COL to a 1D array
+
+                    // size of the 1D array is same as total rows in the matrix
+                    int []colValues = new int[matrix.length];
+                    for(int row = 0 ; row < colValues.length ; row++){
+                        colValues[row] = matrix[row][col];
+                    }
+
+                    // sort the 1D array
+                    sort(BUBBLE_SORT, ASCENDING, colValues);
+
+                    // transfer the values back from the 1D array to the COL
+                    for(int row = 0 ; row < colValues.length ; row++){
+                        matrix[row][col] = colValues[row];
+                    }
+                }
+
+
+
+            }
+        }
+
+    }
+
     private static void bubbleSort(int sortOder, int[] values){
         int currentCounter;
         int adjacentCounter;
@@ -131,9 +178,9 @@ public class ArrayMethods {
 
             }
 
-            System.out.printf("Pass %d : ", (currentCounter+1));
-            printArray(values);
-            System.out.println();
+//            System.out.printf("Pass %d : ", (currentCounter+1));
+//            printArray(values);
+//            System.out.println();
 
         }
     }
@@ -154,5 +201,14 @@ public class ArrayMethods {
         values[position2] = values[position1] - values[position2]; // p1 : 15, p2 : 10
         values[position1] = values[position1] - values[position2]; // p1 : 5, p2 : 10
 
+    }
+
+    public static void printArray(int[][] matrix) {
+        for( int row = 0 ; row < matrix.length ; row++ ){
+            System.out.print("| ");
+            ArrayMethods.printArray(matrix[row]);
+            System.out.print("|");
+            System.out.println();
+        }
     }
 }
