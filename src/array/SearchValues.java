@@ -45,12 +45,18 @@ public class SearchValues {
 //            values[index] = input.nextInt();
 //        }
 
-        values = getArrayWithRandomValues(noOfValues, 100);
+        values = ArrayMethods.getRandomIntValues(noOfValues, 100);
+
+        // print the array values
+
+        // option 1 : using a custom print method
+        printArray(values, ' ');
+        System.out.println();
 
         System.out.print("Value to search: ");
         searchValue = input.nextInt();
 
-        int count = countOccurrences(values, searchValue);
+        int count = ArrayMethods.countOccurrences(values, searchValue);
         System.out.printf("Occurrences of %2d: %2d\n", searchValue, count);
 
         // print the array values
@@ -66,17 +72,6 @@ public class SearchValues {
 
     }
 
-    private static int[] getArrayWithRandomValues(int noOfValues, int maxValue) {
-
-        int []values = new int[noOfValues];
-
-        for(int index = 0 ; index < values.length ; index++){
-            values[index] = new Random().nextInt() %  maxValue;
-        }
-
-        return values;
-    }
-
     private static void printArray(int[] values, char separator) {
 
         for(int index = 0 ; index < values.length ; index++){
@@ -87,18 +82,5 @@ public class SearchValues {
 //            System.out.print(value + separator);
 //        }
     }
-
-    private static int countOccurrences(int[] values, int searchValue) {
-
-        int count = 0 ;
-        for(int index = 0 ; index < values.length ; index++){
-            if( values[index] ==  searchValue ){
-                count++;
-            }
-        }
-
-        return count;
-    }
-
 
 }

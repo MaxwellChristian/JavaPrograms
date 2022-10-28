@@ -50,6 +50,18 @@ public class ArrayMethods {
         }
     }
 
+    public static int countOccurrences(int[] values, int searchValue) {
+
+        int count = 0 ;
+        for(int index = 0 ; index < values.length ; index++){
+            if( values[index] ==  searchValue ){
+                count++;
+            }
+        }
+
+        return count;
+    }
+
     public static void show2DValues(int[][] matrix) {
         int row;
         int col;
