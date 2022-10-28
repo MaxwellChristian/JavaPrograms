@@ -11,7 +11,7 @@ public class ArrayMethods {
     private static final int DESCENDING = 1;
 
     public static final int ROW_SORT = 0;
-    private static final int COL_SORT = 1;
+    public static final int COL_SORT = 1;
 
     public static double[] getRandomDoubleValues(int noOfValues, int maxValue) {
 
@@ -40,7 +40,7 @@ public class ArrayMethods {
 
         for (int currentValue :
                 values) {
-            System.out.print(currentValue + " ");
+            System.out.printf("%3d ", currentValue);
         }
 
     }
