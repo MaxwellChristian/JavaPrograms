@@ -11,11 +11,10 @@
 
 package array.twoDarrays;
 
+import array.utilities.ArrayUtilities;
 import java.util.Scanner;
 
-import static array.ArrayUtilities.*;
-
-public class MaxFromMatrix {
+public class MaximumFromMatrix {
 
     public static void main(String []args){
 
@@ -41,13 +40,13 @@ public class MaxFromMatrix {
         int [][]matrix = new int[totalRows][totalCols];
 
         // fill with random values
-        fillWithRandomValues(matrix, 20, true);
+        ArrayUtilities.fillWithRandomValues(matrix, 20, true);
 
         // display the matrix
-        printValues(matrix);
+        ArrayUtilities.printValues(matrix);
 
         // find the maximum value from matrix
-        int maxValueInMatrix = findMaximum(matrix);
+        int maxValueInMatrix = ArrayUtilities.findMaximum(matrix);
 
         // display the maximum values found from matrix
         System.out.println("Max value in matrix : " + maxValueInMatrix);

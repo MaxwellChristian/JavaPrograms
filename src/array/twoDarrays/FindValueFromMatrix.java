@@ -1,10 +1,8 @@
 package array.twoDarrays;
 
-import array.ArrayUtilities;
+import array.utilities.ArrayUtilities;
 
 import java.util.Scanner;
-
-import static array.ArrayUtilities.*;
 
 public class FindValueFromMatrix {
 
@@ -37,10 +35,10 @@ public class FindValueFromMatrix {
         int[][] matrix = new int[totalRows][totalCols];
 
         // fill with random values
-        fillWithRandomValues(matrix, 20, true);
+        ArrayUtilities.fillWithRandomValues(matrix, 20, true);
 
         // display the matrix
-        printValues(matrix);
+        ArrayUtilities.printValues(matrix);
 
         // prompt the user to input the value to search
         System.out.print("Enter value to search : ");
