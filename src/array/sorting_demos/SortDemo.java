@@ -1,6 +1,6 @@
 package array.sorting_demos;
 
-import array.ArrayUtilities;
+import array.utilities.ArrayUtilities;
 
 public class SortDemo {
 
