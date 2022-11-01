@@ -24,6 +24,7 @@ public class SortDemo {
 
         // print the values
         ArrayUtilities.printValues(values);
+        System.out.println();
 
         // sort the values [assuming ascending sort]
         // sort(values);
@@ -48,6 +49,8 @@ public class SortDemo {
 
         ArrayUtilities.sort(values, ArrayUtilities.SORT_ASCENDING, ArrayUtilities.BUBBLE_SORT);
 
+        // print the values
+        ArrayUtilities.printValues(values);
     }
 
 }
