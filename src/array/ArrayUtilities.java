@@ -34,11 +34,11 @@ public class ArrayUtilities {
         }
     }
 
-    public static void fillWithRandomValues(int[][] matrix, int maxValue) {
+    public static void fillWithRandomValues(int[][] matrix, int maxValue, boolean positiveValueOnly) {
 
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
-                matrix[row][col] = new Random().nextInt() % maxValue;
+                matrix[row][col] = (positiveValueOnly) ? Math.abs(new Random().nextInt() % maxValue) : new Random().nextInt() % maxValue;
             }
         }
 
@@ -97,5 +97,17 @@ public class ArrayUtilities {
         }
     }
 
+    public static int[] search(int[][] matrix, int searchValue) {
+
+        for( int row = 0 ; row < matrix.length ; row++ ){
+            for( int col = 0 ; col < matrix[row].length ; col++ ) {
+                if( matrix[row][col] == searchValue ){
+                    return new int[]{row, col};
+                }
+            }
+        }
+
+        return new int[]{-1, -1};
+    }
 }
 
