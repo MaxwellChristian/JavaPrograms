@@ -41,7 +41,7 @@ public class MaxFromMatrix {
         int [][]matrix = new int[totalRows][totalCols];
 
         // fill with random values
-        fillWithRandomValues(matrix, 20);
+        fillWithRandomValues(matrix, 20, true);
 
         // display the matrix
         printValues(matrix);
