@@ -109,5 +109,27 @@ public class ArrayUtilities {
 
         return new int[]{-1, -1};
     }
+
+    public static void sort(String[] values, int sortOrder, boolean ignoreCase) {
+
+        int i;
+        int j;
+
+        for (i = 0 ; i < values.length ; i++) {
+            for( j = i+1 ; j < values.length ; j++ ){
+
+                //if( values[i] > values[j] ){
+                if( values[i].compareToIgnoreCase(values[j]) > 0 ){
+                    // swap
+                    String temp;
+                    temp = values[i];
+                    values[i] = values[j];
+                    values[j] = temp;
+                }
+
+            }
+        }
+
+    }
 }
 
