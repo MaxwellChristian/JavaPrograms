@@ -120,6 +120,7 @@ public class ArrayUtilities {
 
                 //if( values[i] > values[j] ){
                 if( values[i].compareToIgnoreCase(values[j]) > 0 ){
+
                     // swap
                     String temp;
                     temp = values[i];
@@ -130,6 +131,27 @@ public class ArrayUtilities {
             }
         }
 
+    }
+
+    public static void sortByLength(String[] values, int sortAscending, boolean ignoringCase) {
+        int i;
+        int j;
+
+        for (i = 0 ; i < values.length ; i++) {
+            for( j = i+1 ; j < values.length ; j++ ){
+
+                //if( values[i] > values[j] ){
+                if( values[i].compareToIgnoreCase(values[j]) > 0 && values[i].length() > values[j].length() ){
+
+                    // swap
+                    String temp;
+                    temp = values[i];
+                    values[i] = values[j];
+                    values[j] = temp;
+                }
+
+            }
+        }
     }
 }
 

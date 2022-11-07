@@ -22,7 +22,7 @@ public class BubbleSortDemo {
         int[] values = ArrayMethods.getRandomIntValues(10, 100);
 
         System.out.print("Before Sort : ");
-        ArrayMethods.printArray(values);
+        ArrayMethods.printValues(values);
         System.out.println();
 
         // sort the values in desired order using a specific algorithm
@@ -32,7 +32,7 @@ public class BubbleSortDemo {
         ArrayMethods.sort(ArrayMethods.BUBBLE_SORT, ArrayMethods.ASCENDING, values);
 
         System.out.print("After Sort  : ");
-        ArrayMethods.printArray(values);
+        ArrayMethods.printValues(values);
         System.out.println();
 
     }

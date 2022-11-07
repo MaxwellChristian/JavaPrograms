@@ -1,6 +1,6 @@
 package array;
 
-import static array.ArrayMethods.printArray;
+import static array.ArrayMethods.printValues;
 
 public class DemoMethodsWithArrays {
 
@@ -8,7 +8,7 @@ public class DemoMethodsWithArrays {
 
         int []values = {1, 5, 8, 2, 19, 20, -8} ;
 
-        printArray(values);
+        ArrayMethods.printValues(values);
 
     }
 

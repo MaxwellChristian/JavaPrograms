@@ -6,9 +6,9 @@ public class DisplayPatterns2 {
 
     public static void main(String []args){
 
-        int choice = 0;
-        int row ;
-        int col ;
+        int choice;
+        int size = 0;
+        String symbol = "*";
 
         Scanner input = new Scanner(System.in);
 
@@ -27,14 +27,23 @@ public class DisplayPatterns2 {
             choice = input.nextInt();
 
             switch (choice){
+                default:
+                        if( choice >= 1 && choice <= 6 ){
+                            System.out.print("Enter the desired size : ");
+                            size = input.nextInt();
+                            System.out.print("Enter the desire symbol : ");
+                            symbol = input.next();
+                        }
+                        else {
+                            System.out.println("Invalid choice");
+                            break;
+                        }
                 case 1:
 
                     // line
 
-                    System.out.print("enter length of the line: ");
-                    int len = input.nextInt();
-                    printLine(len);
-
+                    // call the method
+                    printLine(size, symbol);
                     System.out.println();
 
                     break;
@@ -43,9 +52,8 @@ public class DisplayPatterns2 {
                     // block
 
                     // call the method
-                    System.out.print("Enter the length of the line: ");
-                    len = input.nextInt();
-                    printBlock(len);
+                    printBlock(size, symbol);
+                    System.out.println();
 
                     break;
                 case 3:
@@ -55,98 +63,121 @@ public class DisplayPatterns2 {
                     System.out.println("Before left triangle");
 
                     // execute the method
-                    printLeftTriangle();
+                    printLeftTriangle(size, symbol);
+                    System.out.println();
 
                     System.out.println("After left triangle");
 
                     break;
                 case 4:
 
-                    // left triangle
+                    // right triangle
 
                     // execute the method
-                    printRightTriangle();
+                    printRightTriangle(size, symbol);
+                    System.out.println();
 
                     break;
 
                 case 5:
 
-                    // left triangle
+                    // centre triangle
 
                     // execute the method
-                    printCentreTriangle();
+                    printCentreTriangle(size, symbol);
+                    System.out.println();
 
                     break;
             }
 
         } while (choice != 0);
 
-    }
-
-    private static void printLine(int desiredLength) {
-
-        int c ;
-        for(c=1 ; c<=desiredLength ; c++){
-            System.out.print("#");
-        }
-
-    }
-
-    private static void printBlock(int times) {
-        int row;
-
-        for( row = 1 ; row <= times ; row++ ){
-                printLine(times);
-                System.out.println();
-        }
-
-    }
-
-    private static void printCentreTriangle() {
-        int row;
-        int col ;
-
-        for( row = 1 ; row <= 10 ; row++ ){
-            for(col = 1; col <= 10-row  ; col++ ){
-                System.out.print(" ");
-            }
-            for(; col <= 10  ; col++ ){
-                System.out.print("# ");
-            }
-            System.out.println();
-        }
-    }
 
 
-    private static void printRightTriangle() {
-        int row;
-        int col ;
-
-        for( row = 1 ; row <= 10 ; row++ ){
-            for(col = 1; col <= 10-row  ; col++ ){
-                System.out.print(" ");
-            }
-            for(; col <= 10  ; col++ ){
-                System.out.print("#");
-            }
-            System.out.println();
-        }
     }
 
     // method definition
     // 1: return type -> void
     // 2: method name -> printLeftTriangle
     // 3: method arguments/parameters -> ()
-        // no parameters for this method
-    public static void printLeftTriangle() {
+        // size : for the height of the triangle
+        // symbol: character used to print the triangle
+    private static void printLeftTriangle(int desiredHeight, String symbol) {
+        int row;
+
+        for( row = 1 ; row <= desiredHeight ; row++ ){
+            printLine(row, symbol);
+            System.out.println();
+        }
+    }
+
+    // method definition
+    // 1: return type -> void
+    // 2: method name -> printLine
+    // 3: method arguments/parameters -> ()
+    // size : for the height of the line
+    // symbol: character used to print the line
+    private static void printLine(int desiredLength, String symbol) {
+
+        int c ;
+        for(c=1 ; c<=desiredLength ; c++){
+            System.out.print(symbol);
+        }
+
+    }
+
+    // method definition
+    // 1: return type -> void
+    // 2: method name -> printBlock
+    // 3: method arguments/parameters -> ()
+    // size : for the height of the block
+    // symbol: character used to print the block
+    private static void printBlock(int desiredHeight, String symbol) {
+        int row;
+
+        for( row = 1 ; row <= desiredHeight ; row++ ){
+                printLine(desiredHeight, symbol);
+                System.out.println();
+        }
+
+    }
+
+    // method definition
+    // 1: return type -> void
+    // 2: method name -> printCentreTriangle
+    // 3: method arguments/parameters -> ()
+    // size : for the height of the triangle
+    // symbol: character used to print the triangle
+    private static void printCentreTriangle(int desiredHeight, String symbol) {
         int row;
         int col ;
 
-        for( row = 1 ; row <= 10 ; row++ ){
-            printLine(row);
+        for( row = 1 ; row <= desiredHeight ; row++ ){
+
+            printLine(desiredHeight-row, " ");
+            printLine(row, "# ");
+
             System.out.println();
         }
+    }
 
+
+    // method definition
+    // 1: return type -> void
+    // 2: method name -> printRightTriangle
+    // 3: method arguments/parameters -> ()
+    // size : for the height of the triangle
+    // symbol: character used to print the triangle
+    private static void printRightTriangle(int desiredHeight, String symbol) {
+        int row;
+        int col ;
+
+        for( row = 1 ; row <= desiredHeight ; row++ ){
+            printLine(desiredHeight-row, " ");
+            printLine(row, symbol);
+
+            System.out.println();
+        }
     }
 
 }

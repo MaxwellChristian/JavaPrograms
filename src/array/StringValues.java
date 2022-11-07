@@ -61,6 +61,12 @@ public class StringValues {
 
         // print the array of strings [sorted order]
         System.out.println(Arrays.toString(values));
+
+        // sort the values [ignoring the case and as per the length of each word]
+        ArrayUtilities.sortByLength(values, ArrayUtilities.SORT_ASCENDING, true);
+
+        // print the array of strings [sorted order]
+        System.out.println(Arrays.toString(values));
     }
 
 }

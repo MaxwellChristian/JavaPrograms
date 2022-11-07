@@ -33,7 +33,7 @@ public class MatrixRowSort {
 
         // display each row of the matrix [before sort]
         System.out.println("Before sort");
-        ArrayMethods.printArray(matrix);
+        ArrayMethods.printValues(matrix);
 
         // sort each row in ascending order
 //        for( row = 0 ; row < 3 ; row++ ){
@@ -44,7 +44,7 @@ public class MatrixRowSort {
 
         System.out.println("After sort");
         // display each row of the matrix [after sort]
-        ArrayMethods.printArray(matrix);
+        ArrayMethods.printValues(matrix);
     }
 
 }

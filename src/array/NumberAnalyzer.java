@@ -14,7 +14,8 @@
 package array;
 
 import java.util.Arrays;
-import java.util.Random;
+
+import static array.ArrayMethods.getRandomDoubleValues;
 
 public class NumberAnalyzer {
 
@@ -32,7 +33,7 @@ public class NumberAnalyzer {
         int count;
 
         // input
-        values = getArrayWithRandomValues(10, 100);
+        values = getRandomDoubleValues(10, 100);
 
         // processing
         maximumValue = getMaximum(values);
@@ -124,17 +125,6 @@ public class NumberAnalyzer {
         }
 
         return minimumValue;
-    }
-
-    private static double[] getArrayWithRandomValues(int noOfValues, int maxValue) {
-
-        double[] values = new double[noOfValues];
-
-        for (int index = 0; index < values.length; index++) {
-            values[index] = new Random().nextDouble(maxValue);
-        }
-
-        return values;
     }
 
 }
