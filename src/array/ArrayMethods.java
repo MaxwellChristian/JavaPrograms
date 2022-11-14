@@ -36,7 +36,7 @@ public class ArrayMethods {
     }
 
     // overloaded method to print array with int values
-    public static void printArray(int[] values) {
+    public static void printValues(int[] values) {
 
         for (int currentValue :
                 values) {
@@ -46,10 +46,17 @@ public class ArrayMethods {
     }
 
     // overloaded method to print array with double values
-    public static void printArray(double[] values) {
+    public static void printValues(double[] values) {
         for (double currentValue :
                 values) {
             System.out.print(currentValue + " ");
+        }
+    }
+
+    public static void printValues(int[] values, int maxDigits, char separator){
+        String format = "%" + maxDigits + "d" + "%c" ;
+        for (int value : values) {
+            System.out.printf(format, value, separator);
         }
     }
 
@@ -65,27 +72,34 @@ public class ArrayMethods {
         return count;
     }
 
-    public static void show2DValues(int[][] matrix) {
-        int row;
-        int col;
-
-        for (row = 0 ; row < matrix.length ; row++) {
-            System.out.print("| ");
-            for( col = 0 ; col < matrix[row].length ; col++ ){
-                System.out.printf("%2d ", matrix[row][col]);
-            }
-            System.out.print("|");
-            System.out.println();
-        }
-    }
-
     public static void sortMatrix(int[][] matrix) {
 
+        // declare a 1D array which can hold all values from 2D array
+        int []values = new int[matrix.length * matrix[0].length];
+
         // copy all values to a 1D array
+        int destPos = 0 ;
+        int row ;
+        int col ;
+        for( row = 0 ; row < matrix.length ; row++ ){
+            for (col = 0 ; col < matrix[row].length ; col++) {
+                values[destPos] = matrix[row][col];
+                destPos++;
+            }
+        }
 
         // sort the 1D array
+        sort(BUBBLE_SORT, ASCENDING, values);
 
         // copy back to matrix
+        destPos = 0;
+        for( row = 0 ; row < matrix.length ; row++ ){
+            for (col = 0 ; col < matrix[row].length ; col++) {
+//                values[destPos] = matrix[row][col];
+                 matrix[row][col] = values[destPos];
+                destPos++;
+            }
+        }
 
     }
 
@@ -203,10 +217,19 @@ public class ArrayMethods {
 
     }
 
-    public static void printArray(int[][] matrix) {
+    public static void printValues(int[][] matrix, int maxDigits, char separator) {
         for( int row = 0 ; row < matrix.length ; row++ ){
-            System.out.print("| ");
-            ArrayMethods.printArray(matrix[row]);
+            System.out.print("|");
+            ArrayMethods.printValues(matrix[row], maxDigits, separator);
+            System.out.print("|");
+            System.out.println();
+        }
+    }
+
+    public static void printValues(int[][] matrix) {
+        for( int row = 0 ; row < matrix.length ; row++ ){
+            System.out.print("|");
+            ArrayMethods.printValues(matrix[row], 2, ' ');
             System.out.print("|");
             System.out.println();
         }
