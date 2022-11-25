@@ -35,9 +35,20 @@ public class Person {
     // address
     private String address;
 
+    // no-argument constructor
+    //  is a member method with exactly same name as the class
+    // constructor does not have a return type, but still it returns the newly created instance of the class
+    // it is generally used for initialisation purpose i.e. initialisation of member variables
     public Person() {
+        name = "NA";
+        address = "NA";
     }
 
+    public Person(String name) {
+        this.name = name;
+    }
+
+    // parameterized constructor
     public Person(String name, int dateOfBirth, int monthOfBirth, int yearOfBirth, float weight, float height, int gender, String address) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -134,5 +145,16 @@ public class Person {
     }
     */
 
-
+    @Override
+    public String toString() {
+        return "" +
+                "name='" + name + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", monthOfBirth=" + monthOfBirth +
+                ", yearOfBirth=" + yearOfBirth +
+                ", weight=" + weight +
+                ", height=" + height +
+                ", gender=" + gender +
+                ", address='" + address + '\'' ;
+    }
 }
