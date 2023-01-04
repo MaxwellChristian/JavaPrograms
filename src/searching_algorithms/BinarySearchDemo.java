@@ -55,15 +55,15 @@ public class BinarySearchDemo {
                 return mid;
 
             // If search values is smaller than mid,
-            // then it can exist only in LEFT sub-list of values
-            // LEFT sub-list: change the right to mid - 1
-            if (valueToSearch > values[mid])
-                return binarySearchRecursive(values, valueToSearch, left, mid - 1);
-
-            // If search values is smaller than mid,
             // then it can exist only in RIGHT sub-list of values
             // RIGHT sub-list: change the left to mid + 1
-            return binarySearchRecursive(values, valueToSearch, mid + 1, right);
+            if (valueToSearch > values[mid])
+                return binarySearchRecursive(values, valueToSearch, mid + 1 , right);
+
+            // If search values is smaller than mid,
+            // then it can exist only in LEFT sub-list of values
+            // LEFT sub-list: change the right to mid - 1
+            return binarySearchRecursive(values, valueToSearch, left, mid - 1);
         }
 
         // search value does not exist in the list
