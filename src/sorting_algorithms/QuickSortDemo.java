@@ -26,9 +26,9 @@ public class QuickSortDemo {
             int pivotIndex = partition(list, first, last);
 
 //            System.out.print(" : " + list[pivotIndex]);
-            System.out.print( " -> ");
-            ArrayUtilities.printValues(list);
-            System.out.println();
+//            System.out.print( " -> ");
+//            ArrayUtilities.printValues(list);
+//            System.out.println();
 
             quickSortRecursive(list, first, pivotIndex - 1);
             quickSortRecursive(list, pivotIndex + 1, last);
@@ -40,7 +40,7 @@ public class QuickSortDemo {
         int low = first + 1;        // Index for forward search
         int high = last;            // Index for backward search
 
-        System.out.print(pivot + " : ");
+//        System.out.print(pivot + " : ");
 
         while (high > low) {
 
@@ -69,7 +69,7 @@ public class QuickSortDemo {
             list[high] = pivot;
 
 //            ArrayUtilities.printValues(list);
-            ArrayUtilities.printValues(list, first, last+1);
+//            ArrayUtilities.printValues(list, first, last+1);
 //            System.out.println();
 
             return high;
@@ -77,7 +77,7 @@ public class QuickSortDemo {
         else {
 
 //            ArrayUtilities.printValues(list);
-            ArrayUtilities.printValues(list, first, last+1);
+//            ArrayUtilities.printValues(list, first, last+1);
 //            System.out.println();
 
             return first;
