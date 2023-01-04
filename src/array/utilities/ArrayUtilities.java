@@ -56,6 +56,12 @@ public class ArrayUtilities {
         }
     }
 
+    public static void printValues(int[] values, int start, int end) {
+        for (int counter = start ; counter < end  ; counter++) {
+            System.out.print(values[counter] + " ");
+        }
+    }
+
     public static void sort(int[] values, int sortOrder, int sortingAlgorithm) {
 
         switch (sortingAlgorithm) {
