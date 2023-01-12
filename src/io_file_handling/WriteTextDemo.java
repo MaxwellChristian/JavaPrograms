@@ -43,6 +43,9 @@ public class WriteTextDemo {
 
             writer.print("306-xxx-xxxx");
             writer.println();
+
+            writer.print("198.989");
+            writer.println();
             // ends record 2
 
             // 4. close the file
