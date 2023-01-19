@@ -20,9 +20,10 @@ public class HashSetDemo {
         set.add("London");
         set.add("Paris");
         set.add("New York");
-        set.add("San Francisco");
+        set.add("San Francisco"); // not a float value
         set.add("Beijing");
         set.add("New York");
+        int x;//float
 
         System.out.println("LinkedHashSet: " + set);
 

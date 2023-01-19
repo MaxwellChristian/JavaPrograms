@@ -1,4 +1,4 @@
-package io_file_handling;
+package generics_demos;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

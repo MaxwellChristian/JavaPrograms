@@ -2,6 +2,7 @@ package generics_demos;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class LinkedListDemo {
 
@@ -24,6 +25,8 @@ public class LinkedListDemo {
         while (llIterator.hasNext()){
             System.out.println(llIterator.next());
         }
+
+        ListIterator<Integer> listIterator = llInts.listIterator();
 
     }
 
