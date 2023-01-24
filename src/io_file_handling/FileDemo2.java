@@ -17,30 +17,40 @@ public class FileDemo2 {
 
             String filePath = cmdArgs[0];
 
-            File fileToWork = new File(filePath);
-
-            // check whether the path exists or not
-            if( fileToWork.exists() ){
-
-                if( fileToWork.isFile() ){
-                    System.out.println(filePath + ": is a FILE with size " + fileToWork.length());
-                }
-                else {
-                    if( fileToWork.isDirectory() ){
-                        File[] contentsOfDirectory = fileToWork.listFiles();
-                        for (File currentFile: contentsOfDirectory) {
-                            System.out.println(currentFile.getAbsolutePath());
-                        }
-                    }
-                }
-
-            }
-            else {
-                System.out.println( filePath + ": No such path exists");
-            }
+            showTree( filePath );
 
         }
 
+    }
+
+    private static void showTree(String filePath) {
+        File fileToWork = new File(filePath);
+
+        // check whether the path exists or not
+        if( fileToWork.exists() ){
+
+//            if( fileToWork.isFile() ){
+//                System.out.println(filePath + ": is a FILE with size " + fileToWork.length());
+//            }
+//            else {
+                if( fileToWork.isDirectory() ){
+                    File[] contentsOfDirectory = fileToWork.listFiles();
+                    for (File currentFile: contentsOfDirectory) {
+                        if( currentFile.isDirectory() ){
+                            showTree(currentFile.getAbsolutePath());
+                        }
+                        else {
+                            System.out.println(currentFile.getAbsolutePath());
+                        }
+
+                    }
+                }
+//            }
+
+        }
+        else {
+            System.out.println( filePath + ": No such path exists");
+        }
     }
 
 }
