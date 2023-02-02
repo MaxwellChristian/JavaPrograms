@@ -12,8 +12,8 @@ public class Apple {
         }
 
     };
-    private double weight;
-    private Color color;
+    private final double weight;
+    private final Color color;
 
     public double getWeight(){return  weight;}
     public Color getColor(){return color;};
