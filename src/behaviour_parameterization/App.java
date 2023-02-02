@@ -1,6 +1,5 @@
 package behaviour_parameterization;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class App {
@@ -74,6 +73,16 @@ public class App {
         return rs;
     }
 
+    public static <T> List<T> filterList(List<T> list, Predict<T> predict)
+    {
+        List<T> rs = new ArrayList<>();
+        for(T a: list)
+        {
+            if(predict.test(a)==true) rs.add(a);
+        }
+        return rs;
+    }
+
     static class ApplePredictByWeight implements ApplePredict{
         private double weight;
         public ApplePredictByWeight(double weight){this.weight=weight;}
@@ -97,6 +106,7 @@ public class App {
     }
 
 
+
     public static void main(String[] args) {
         List<Apple> apples = genApples();
 //        List<Apple> greenApples = filterGreen(apples);
@@ -109,18 +119,80 @@ public class App {
 //        List<Apple> bigApples = filterByWeight(apples, 0.5);
 //        for(Apple a : bigApples) System.out.println(a);
 //        System.out.println("--------------------------------------");
-        List<Apple> redApples = filterApples(apples,
-                new ApplePredictByColor(Apple.Color.Red));
-        printApples(redApples);
+//          List<Apple> redApples = filterApples(apples,
+//                  new ApplePredictByColor(Apple.Color.Red));
+//          printApples(redApples);
+//
+//        List<Apple> greenApples = filterApples(apples,
+//                new ApplePredictByColor(Apple.Color.Green));
+//        printApples(greenApples);
+//
+//        List<Apple> bigApple = filterApples(apples,new ApplePredictByWeight(0.5));
+//        printApples(bigApple);
 
-        List<Apple> greenApples = filterApples(apples,
-                new ApplePredictByColor(Apple.Color.Green));
-        printApples(greenApples);
+//        List<Apple> redApples = filterApples(apples, new ApplePredict() {
+//            @Override
+//            public boolean test(Apple apple) {
+//                return apple.getColor().equals(Apple.Color.Red);
+//            }
+//        });
 
-        List<Apple> bigApple = filterApples(apples,new ApplePredictByWeight(0.5));
-        printApples(bigApple);
+//        List<Apple> redApples = filterApples(apples,
+//                (Apple a)->a.getColor().equals(Apple.Color.Red));
+
+        List<Apple> redApples = filterList(apples,
+                (Apple a)->a.getColor().equals(Apple.Color.Red));
+
 
         printApples(apples,new AppleFormatter1());
+
+//        List<Apple> BigApples = filterApples(apples, new ApplePredict() {
+//            @Override
+//            public boolean test(Apple apple) {
+//                return apple.getWeight()>=0.5;
+//            }
+//        });
+        List<Apple> BigApples = filterApples(apples,(Apple a)->a.getWeight()>=0.5);
+        printApples(BigApples,new AppleFormatter1());
+
+
+//        List<Apple> BigRedApples = filterApples(apples, new ApplePredict() {
+//            @Override
+//            public boolean test(Apple apple) {
+//                return apple.getColor().equals(Apple.Color.Red) && apple.getWeight()>=0.5;
+//            }
+//        });
+//        List<Apple> BigRedApples = filterApples(apples,
+//                (Apple a)->a.getWeight()>=0.5 && a.getColor().equals(Apple.Color.Red));
+        List<Apple> BigRedApples = filterApples(apples,
+                a->a.getWeight()>=0.5 && a.getColor().equals(Apple.Color.Red));
+        printApples(BigApples, new AppleFormatter() {
+            @Override
+            public String accept(Apple apple) {
+                return apple.toString();
+            }
+        });
+
+//        apples.sort(new Comparator<Apple>() {
+//            @Override
+//            public int compare(Apple o1, Apple o2) {
+//                return (int)((o1.getWeight()-o2.getWeight())*100.0);
+//                //return (int)((o1.getWeight()-o2.getWeight()));
+//            }
+//        });
+        apples.sort((Apple a1,Apple a2)->(int)((a1.getWeight()-a2.getWeight())*100.0));
+
+        printApples(apples);
+
+        List<Integer> list = new ArrayList<>();
+        for(int i=0;i<100;i++)list.add((int)(Math.random()*1000.0));
+        List<Integer> even = filterList(list,
+                (Integer n)->n.intValue()%2==0);
+        List<Integer> ord = filterList(list,
+                (Integer n)->n.intValue()%2==1);
+        even.sort((Integer i1,Integer i2)->i1.intValue()-i2.intValue());
+        System.out.println(even);
+
 
     }
 
