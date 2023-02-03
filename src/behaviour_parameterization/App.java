@@ -1,5 +1,6 @@
 package behaviour_parameterization;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class App {
@@ -141,7 +142,9 @@ public class App {
 //                (Apple a)->a.getColor().equals(Apple.Color.Red));
 
         List<Apple> redApples = filterList(apples,
-                (Apple a)->a.getColor().equals(Apple.Color.Red));
+                (Apple a)->{
+                    return a.getColor().equals(Apple.Color.Red);
+                });
 
 
         printApples(apples,new AppleFormatter1());
@@ -173,14 +176,26 @@ public class App {
             }
         });
 
-//        apples.sort(new Comparator<Apple>() {
-//            @Override
-//            public int compare(Apple o1, Apple o2) {
-//                return (int)((o1.getWeight()-o2.getWeight())*100.0);
-//                //return (int)((o1.getWeight()-o2.getWeight()));
-//            }
-//        });
-        apples.sort((Apple a1,Apple a2)->(int)((a1.getWeight()-a2.getWeight())*100.0));
+
+        // style 1: using a new comparator class
+        class AppleComparator implements Comparator<Apple>{
+            @Override
+            public int compare(Apple o1, Apple o2) {
+                return (int) (o1.getWeight() - o2.getWeight());
+            }
+        }
+        apples.sort(new AppleComparator());
+
+        // style 2: using anonymous comparator
+        apples.sort(new Comparator<Apple>() {
+            @Override
+            public int compare(Apple o1, Apple o2) {
+                return (int) (o1.getWeight() - o2.getWeight());
+            }
+        });
+
+        // style 3: using lambda
+        apples.sort((Apple o1, Apple o2)->(int) (o1.getWeight() - o2.getWeight()));
 
         printApples(apples);
 
