@@ -33,7 +33,6 @@ public class MenuOfDishes {
         // -- the calorie and the count must be dynamic
         // sorted on calories in decreasing order and
         // then sorted on name in ascending order
-
 //        List<String> topHighCalorieDishes = fetchHighCalorieDishes(menu, 500, 3);
 //        System.out.println(topHighCalorieDishes);
 
