@@ -1,4 +1,4 @@
-package array.functional_programming.streams_demo;
+package functional_programming.streams_demo;
 
 public class Dish {
 

@@ -1,4 +1,4 @@
-package array.functional_programming.streams_demo;
+package functional_programming.streams_demo;
 
 import java.util.*;
 import java.util.stream.Collectors;
