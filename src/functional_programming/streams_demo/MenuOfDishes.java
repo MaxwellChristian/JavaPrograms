@@ -113,6 +113,16 @@ public class MenuOfDishes {
         })));
 
         System.out.println(dishes);
+
+        // let us count the total dishes in each type of group i.e., count dishes of each type
+        Map<Dish.Type, Long> totalDishesOfEachType = menu.stream().collect(Collectors.groupingBy(Dish::type, Collectors.counting()));
+        System.out.println(totalDishesOfEachType);
+
+        // try out
+        // display the maximum calories dish in each group
+        // i.e., display the dish in each type that has maximum calorie
+
+
     }
 
     private static List<String> fetchHighCalorieDishes(List<Dish> dishes, int calorie, int count) {
