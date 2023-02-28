@@ -97,6 +97,22 @@ public class MenuOfDishes {
             System.out.println( type + " : " + dishesByCalorieLevel.get(type) );
         }
 
+        // try out
+        // group the dishes as per their TYPE followed by the CALORIE LEVEL
+        // i.e. grouped as per MEAT/FISH/OTHER and then grouped as DIET/NORMAL/FAT
+        Map<Dish.Type, Map<CalorieLevel, List<Dish>>> dishes = menu.stream().collect(Collectors.groupingBy(Dish::type, Collectors.groupingBy(dish -> {
+            if (dish.calories() <= 400) {
+                return CalorieLevel.DIET;
+            } else {
+                if (dish.calories() <= 600) {
+                    return CalorieLevel.NORMAL;
+                } else {
+                    return CalorieLevel.FAT;
+                }
+            }
+        })));
+
+        System.out.println(dishes);
     }
 
     private static List<String> fetchHighCalorieDishes(List<Dish> dishes, int calorie, int count) {
