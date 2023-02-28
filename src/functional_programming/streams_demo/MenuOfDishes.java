@@ -121,7 +121,12 @@ public class MenuOfDishes {
         // try out
         // display the maximum calories dish in each group
         // i.e., display the dish in each type that has maximum calorie
+        Map<Dish.Type, Optional<Dish>> dishWithMaxCalorieInType = menu.stream().collect(Collectors.groupingBy(Dish::type, Collectors.maxBy(Comparator.comparingInt(Dish::calories))));
+        System.out.println(dishWithMaxCalorieInType);
 
+        // the same result achieved after removing the optional part
+        Map<Dish.Type, Dish> maxDishes = menu.stream().collect(Collectors.groupingBy(Dish::type, Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingInt(Dish::calories)), Optional::get)));
+        System.out.println(maxDishes);
 
     }
 
