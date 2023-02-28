@@ -58,6 +58,45 @@ public class MenuOfDishes {
         System.out.println("Minimum calorie on menu: " + menuStatistics.getMin());
         System.out.println("Maximum calorie on menu: " + menuStatistics.getMax());
         System.out.println("Total dishes on menu: " + menuStatistics.getCount());
+
+        // with database we have encountered the concept of grouping
+
+        // 1. create a stream
+        // 2. collect the elements from the stream on a group
+        // 2.1 create a group using collectors [grouping on the base of a field]
+        Map<Dish.Type, List<Dish>> dishesGroupedByType = menu.stream().collect(Collectors.groupingBy(Dish::type));
+        for (Dish.Type type:
+             dishesGroupedByType.keySet()) {
+            System.out.println( type + " : " + dishesGroupedByType.get(type) );
+        }
+
+        // we wish to fetch the dishes as per types
+        // and also label each dish as DIET/NORMAL/FAT dish on basis of calories
+        // calories between 400 and 600 : normal dish
+        // calories less than 400 : diet dish
+        // calories above 600 : fat dish
+
+        // we can also use lambda with collectors and grouping
+
+        enum CalorieLevel { DIET, NORMAL, FAT };
+
+        Map<CalorieLevel, List<Dish>> dishesByCalorieLevel = menu.stream().collect(Collectors.groupingBy(dish -> {
+            if (dish.calories() <= 400) {
+                return CalorieLevel.DIET;
+            } else {
+                if (dish.calories() <= 600) {
+                    return CalorieLevel.NORMAL;
+                } else {
+                    return CalorieLevel.FAT;
+                }
+            }
+        }));
+
+        for (CalorieLevel type:
+                dishesByCalorieLevel.keySet()) {
+            System.out.println( type + " : " + dishesByCalorieLevel.get(type) );
+        }
+
     }
 
     private static List<String> fetchHighCalorieDishes(List<Dish> dishes, int calorie, int count) {
