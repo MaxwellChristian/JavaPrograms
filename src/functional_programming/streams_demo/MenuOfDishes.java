@@ -1,5 +1,6 @@
 package functional_programming.streams_demo;
 
+import javax.swing.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -127,6 +128,22 @@ public class MenuOfDishes {
         // the same result achieved after removing the optional part
         Map<Dish.Type, Dish> maxDishes = menu.stream().collect(Collectors.groupingBy(Dish::type, Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingInt(Dish::calories)), Optional::get)));
         System.out.println(maxDishes);
+
+        // display the calories levels available with each type of dish
+        // e.g.: FISH has diet and normal dishes. meat has normal and fat dishes, etc.
+        Map<Dish.Type, Set<CalorieLevel>> dishes2 = menu.stream().collect(Collectors.groupingBy(Dish::type, Collectors.mapping(dish -> {
+            if (dish.calories() <= 400) {
+                return CalorieLevel.DIET;
+            } else {
+                if (dish.calories() <= 600) {
+                    return CalorieLevel.NORMAL;
+                } else {
+                    return CalorieLevel.FAT;
+                }
+            }
+        }, Collectors.toSet())));
+
+        System.out.println(dishes2);
 
     }
 
