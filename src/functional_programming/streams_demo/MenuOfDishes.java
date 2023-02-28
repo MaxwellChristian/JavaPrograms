@@ -15,11 +15,11 @@ public class MenuOfDishes {
         menu.add(new Dish("Beef Burger", false, 700, Dish.Type.MEAT));
 
         menu.add(new Dish("Chicken Wings", false, 400, Dish.Type.MEAT));
-        menu.add(new Dish("French Fries", false, 500, Dish.Type.OTHER));
+        menu.add(new Dish("French Fries", true, 500, Dish.Type.OTHER));
         menu.add(new Dish("Fried Rice", false, 350, Dish.Type.OTHER));
-        menu.add(new Dish("Diced Seasonal Fruits", false, 100, Dish.Type.OTHER));
+        menu.add(new Dish("Diced Seasonal Fruits", true, 100, Dish.Type.OTHER));
 
-        menu.add(new Dish("Cheese Burst Pizza", false, 800, Dish.Type.OTHER));
+        menu.add(new Dish("Cheese Burst Pizza", true, 800, Dish.Type.OTHER));
 
         menu.add(new Dish("Prawns Platter", false, 400, Dish.Type.FISH));
         menu.add(new Dish("Charcoal cooked Salman", false, 300, Dish.Type.FISH));
@@ -144,6 +144,21 @@ public class MenuOfDishes {
         }, Collectors.toSet())));
 
         System.out.println(dishes2);
+
+        // fetch the dishes separated on the criteria whether it is a vegetarian dish or not
+        // here we need to fetch both the type of dishes i.e., vegetarian and non-vegetarian
+        Map<Boolean, List<Dish>> separatedDishes = menu.stream().collect(Collectors.partitioningBy(Dish::vegetarian));
+        for (Boolean type:
+             separatedDishes.keySet()) {
+            System.out.println("Vegetarian : " + type + " : " + separatedDishes.get(type));
+        }
+
+        // dishes separated on base on vegetarian and then grouped as per type
+        Map<Boolean, Map<Dish.Type, List<Dish>>> separatedDishesGroupedByType = menu.stream().collect(Collectors.partitioningBy(Dish::vegetarian, Collectors.groupingBy(Dish::type)));
+        System.out.println(separatedDishesGroupedByType);
+        System.out.println(separatedDishesGroupedByType.get(true));
+
+
 
     }
 
