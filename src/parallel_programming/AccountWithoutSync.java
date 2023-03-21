@@ -39,18 +39,23 @@ public class AccountWithoutSync {
             return balance;
         }
 
+        //public synchronized void deposit(int amount) {
         public void deposit(int amount) {
-            int newBalance = balance + amount;
 
-            // This delay is deliberately added to magnify the
-            // data-corruption problem and make it easy to see.
-            try {
-                Thread.sleep(5);
-            }
-            catch (InterruptedException ex) {
-            }
+            // synchronized (this){
+                int newBalance = balance + amount;
 
-            balance = newBalance;
+                // This delay is deliberately added to magnify the
+                // data-corruption problem and make it easy to see.
+                try {
+                    Thread.sleep(5);
+                }
+                catch (InterruptedException ex) {
+                }
+
+                balance = newBalance;
+            // }
+
         }
     }
 
